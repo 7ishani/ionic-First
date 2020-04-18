@@ -8,18 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  data: any;
+  username: any;
+
  
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.user;
+        this.username = this.router.getCurrentNavigation().extras.state.user;
+       
+        console.log("msg2 : "+this.username);
       }
     });
   }
- 
-  ngOnInit() { }
 
-  
+  ngOnInit() {
+  }
 
 }
